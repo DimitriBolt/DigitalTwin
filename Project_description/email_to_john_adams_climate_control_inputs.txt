@@ -1,0 +1,37 @@
+Dear John,
+
+I prepared a first-pass inventory of candidate climate-control inputs from the Biosphere 2 controls database. The file is attached; the relevant worksheet is "Input".
+
+The purpose of this list is to identify the control variables that could be used by a constrained climate-control optimization algorithm. The algorithm is intended to minimize energy consumption while respecting operational constraints such as overall system stability, biome health, environmental integrity, chiller cycling / start fees and demand charges, equipment cycling, aggregate electrical load, and system longevity.
+
+Could you and/or the engineering team please review the "Input" sheet and check the following?
+
+1. Are the listed parameters actually usable for climate control?
+If any listed point should not be treated as a controllable climate input, please mark it for removal and, if possible, add a short reason.
+
+2. Are any climate-control parameters missing?
+If there are BMS/control points that can affect climate but are not listed, please add them or send me the point names.
+
+3. Are the equipment and biome mappings correct?
+I especially want to verify the Rain Forest controls and the Energy Center points, since some central plant equipment may affect multiple biomes or shared loops.
+
+To help locate the physical equipment, I added several lookup columns in the "Input" sheet:
+- "Affected biome"
+- "Equipment tag"
+- "Equipment description / lookup"
+- "BMS path (ID_NAME)"
+- "Device measurement"
+- "Control family"
+- "Manipulated signal type"
+- "Confidence"
+- "Engineering verification notes"
+
+The most useful fields for finding the actual equipment should be "BMS path (ID_NAME)" and "Equipment tag". The "Confidence" and "Engineering verification notes" columns indicate where I am less certain whether a point is a true command/setpoint, an actuator output/feedback signal, or a point that needs engineering confirmation.
+
+I am not asking for a full review of the time-series data at this stage. The main goal is to confirm whether this is the correct set of controllable equipment parameters for a future optimization/control model, and to identify anything that should be removed or added.
+
+Thank you very much for your help.
+
+Best regards,
+Dimitri
+

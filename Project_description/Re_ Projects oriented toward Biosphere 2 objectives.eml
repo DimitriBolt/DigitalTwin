@@ -1,0 +1,67 @@
+Received: from EA3PR19MB9618.namprd19.prod.outlook.com (2603:10b6:303:2b6::19)
+ by SJ0PR19MB6679.namprd19.prod.outlook.com with HTTPS; Mon, 27 Apr 2026
+ 20:00:32 +0000
+ARC-Seal: i=2; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=pass;
+ b=K5zCs4XUe63ZG45AQsCTHmjfM7bK1rR2b2OqkNGOAMZchw4jYaDb6uMGxsFF08ZBYqutHWu0AzMDTdNj3V9jPbbTcP4csNO4/tgxFuW+lCLKuDddcGsMjJvAA/krXyJZ3gqxwMLejzmgTevBgwUEzl1vokQySuLHjz6Y0fcUqTgHsfaTTqz4D8yj21LZSWmOEHHlyFU2JcGe2sl3v0Hl1WK9RUVDojybLVqj748A3zHfo4qi08NZketQUKzSiKcBQq+jouXMqNL/Un4XjOMvc6+jE8i5crg8yfcmpuHGoJqQuV8dIyCiS35RaunkcyFK7pioTgtIb/V1IzvQmeoNgg==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector10001;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=TCuYOVB6wxKxTMuxhMp1CShkaCdXd5XiP/2BjGzvN9M=;
+ b=v2Mab6iaMNaKwrwuQ+ry1jIW0V3NCzBTUwHKJ4gmgIL6vbIr/8o8hsW7zodXGrnl4bBo6WtpeVCw4Tt5JVABaaYU5ctT1cLhiw9SLO6LIQ+lyamzWAtHVMe7gigNDVPf2GZmpxcM1U4lm4XxKQxpSM3ts67i7fCL2VKK/wllODeARdN9jJlDdcqAyS+xlWCFVZXpx4GMP0PajdArDEhmZe1orEj+9HDGXTYVAYXrVepp5ckVgmBe1NOToG0bnQRtBy1Psd2bJ0Yf8ZJOKPFoD7AuYkG5XLWl/M7bTTU7DDPDJ69oK2v6/DJwRnTbicIK3Yy9SV0NC1/OfNMlGxw4Vw==
+ARC-Authentication-Results: i=2; mx.microsoft.com 1; spf=pass (sender ip is
+ 40.93.13.56) smtp.rcpttodomain=uaconnect.arizona.edu
+ smtp.mailfrom=arizona.edu; dmarc=pass (p=quarantine sp=none pct=100)
+ action=none header.from=arizona.edu; dkim=none (message not signed); arc=pass
+ (0 oda=1 ltdi=1 spf=[1,1,smtp.mailfrom=jadamsb2@arizona.edu]
+ dmarc=[1,1,header.from=arizona.edu])
+Received: from CH0PR03CA0425.namprd03.prod.outlook.com (2603:10b6:610:10e::27)
+ by EA3PR19MB9618.namprd19.prod.outlook.com (2603:10b6:303:2b6::19) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.9846.26; Mon, 27 Apr
+ 2026 20:00:30 +0000
+Received: from CH1PEPF0000A346.namprd04.prod.outlook.com
+ (2603:10b6:610:10e:cafe::e6) by CH0PR03CA0425.outlook.office365.com
+ (2603:10b6:610:10e::27) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.20.9846.26 via Frontend Transport; Mon,
+ 27 Apr 2026 20:00:30 +0000
+Authentication-Results: spf=pass (sender IP is 40.93.13.56)
+ smtp.mailfrom=arizona.edu; dkim=none (message not signed)
+ header.d=none;dmarc=pass action=none header.from=arizona.edu;compauth=pass
+ reason=100
+Received-SPF: Pass (protection.outlook.com: domain of arizona.edu designates
+ 40.93.13.56 as permitted sender) receiver=protection.outlook.com;
+ client-ip=40.93.13.56; helo=DM2PR04CU003.outbound.protection.outlook.com;
+ pr=C
+Received: from mailgator.email.arizona.edu (44.237.82.88) by
+ CH1PEPF0000A346.mail.protection.outlook.com (10.167.244.11) with Microsoft
+ SMTP Server (version=TLS1_3, cipher=TLS_AES_256_GCM_SHA384) id 15.20.9846.18
+ via Frontend Transport; Mon, 27 Apr 2026 20:00:30 +0000
+Received: from usb-smtp-inbound-delivery-1.mimecast.com (usb-smtp-delivery-1.mimecast.com [170.10.150.241])
+	by mailgator.email.arizona.edu (Postfix) with ESMTP id 6778B7000840
+	for <dimitribolt@arizona.edu>; Mon, 27 Apr 2026 13:00:29 -0700 (MST)
+From: "Adams, John R - (jadamsb2)" <jadamsb2@arizona.edu>
+To: "Bolt, Dimitri - (dimitribolt)" <dimitribolt@arizona.edu>
+Subject: Re: Projects oriented toward Biosphere 2 objectives
+Date: Mon, 27 Apr 2026 20:00:15 +0000
+Message-ID: <BCF088C2-00FD-4936-8FC1-05C29F5B3070@arizona.edu>
+
+Hello Dimitri,
+
+Thank you for sharing your work and for following up after your visit—this is a very interesting approach, and I appreciate you sending the document. I will review it in detail.
+
+We are certainly interested in minimizing energy consumption, but not at the expense of overall system stability and the health of the biomes. Maintaining environmental integrity is a critical constraint for us, so any optimization approach would need to account for that balance.
+
+From a practical standpoint, I'd like to better understand the data requirements for your model. While we do have extensive historical and real-time data available, it would be helpful to know what additional inputs you would need beyond what we currently collect.
+
+One important operational consideration is our chiller system. Each time the chiller cycles on, we incur a significant electrical demand or "start" fee from the utility. Managing these demand spikes is a key factor in our overall energy costs. In addition, we have a number of motors and systems running continuously or intermittently across the facility. Understanding how your approach accounts for equipment cycling, demand charges, and aggregate load will be important.
+
+If you could outline the specific data streams required (e.g., equipment-level energy use, cycling frequency, environmental setpoints, etc.), as well as how your model incorporates constraints like demand charges and system longevity, that would be very helpful.
+
+This is an area of strong interest for us, and I would be open to continuing the discussion as you move past your PhD qualification exam this summer.
+
+Thank you again, and I look forward to reviewing your materials.
+
+Best regards,
+
+John
+
