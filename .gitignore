@@ -27,3 +27,7 @@ Thumbs.db
 # Data files (large or sensitive)
 *.csv
 !filtered_input_climate_controls.csv
+
+# Presentation source scans and vendor exports (derived web assets are kept)
+/presentation/cloud_0.e57
+/presentation/source-assets/

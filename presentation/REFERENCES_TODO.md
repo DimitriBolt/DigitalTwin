@@ -1,44 +1,100 @@
 # Авторитетные ссылки для презентации
 
-> Задача: повысить доверие директоров Biosphere 2 к докладу аспиранта.
-> Добавить в текст речи и/или на слайды при подготовке презентации.
+> Задача: повысить доверие директоров Biosphere 2 к докладу аспиранта. Добавить в текст речи и/или на слайды при подготовке презентации.
+
+> Граница продукта: это испытательная платформа для внешних климатических стратегий, а не система, которая создаёт или оптимизирует стратегии. Каноническое описание: `PRODUCT_POSITIONING.md`.
 
 ---
 
-## MPC (Model Predictive Control)
+## Безопасность и эксплуатационная ценность Biosphere 2
 
-- **Стандарт в промышленности:** применяется в нефтехимии, энергетике, HVAC уже 40+ лет
-- Camacho, E.F. & Bordons, C. "Model Predictive Control" — фундаментальный учебник
-- Rawlings, J.B. et al. "Model Predictive Control: Theory, Computation, and Design" (2nd ed.)
-- Wikipedia MPC: https://en.wikipedia.org/wiki/Model_predictive_control
+-   **Официальное описание Biosphere 2:** проверить и процитировать сведения об Energy Center, air handlers, chillers, boilers и риске для биомов при потере климатического контроля.
+    -   Источник: [Biosphere 2 — About the Facility](https://biosphere2.org/about/about-biosphere-2)
+-   Получить у Biosphere 2 подтверждённые эксплуатационные ограничения:
+    -   допустимые диапазоны температуры и влажности;
+    -   ограничения на скорость изменения климата;
+    -   ограничения на циклы и режимы оборудования;
+    -   процедуру допуска стратегии к реальному испытанию.
 
-## LSTM (Long Short-Term Memory)
+## Методы создания стратегий — внешние по отношению к платформе
 
-- Hochreiter & Schmidhuber (1997) — оригинальная статья (10,000+ цитирований)
-- Используется в Google, Apple, Amazon для обработки временных рядов
+### MPC (Model Predictive Control)
+
+-   **Стандарт в промышленности:** применяется в нефтехимии, энергетике, HVAC уже 40+ лет
+-   Camacho, E.F. & Bordons, C. "Model Predictive Control" — фундаментальный учебник
+-   Rawlings, J.B. et al. "Model Predictive Control: Theory, Computation, and Design" (2nd ed.)
+-   Wikipedia MPC: [https://en.wikipedia.org/wiki/Model_predictive_control](https://en.wikipedia.org/wiki/Model_predictive_control)
+-   **Роль в проекте:** MPC может создать внешнюю стратегию, которую испытательная платформа затем загружает и проверяет. Платформа сама не является MPC-оптимизатором.
+
+### Другие авторы стратегий
+
+-   PID и rule-based controllers
+-   Reinforcement Learning agents
+-   математическая оптимизация
+-   экспертные стратегии операторов Biosphere 2
+
+## Forward simulator / Digital Twin
+
+### LSTM (Long Short-Term Memory)
+
+-   Hochreiter & Schmidhuber (1997) — оригинальная статья (10,000+ цитирований)
+-   Используется в Google, Apple, Amazon для обработки временных рядов
+-   **Роль в проекте:** возможная модель для расчёта климатического отклика на загруженные управляющие воздействия; не источник стратегии.
+-   До презентационного утверждения проверить первичные источники для всех заявлений о применениях и производительности.
 
 ## Аналогичные системы (Digital Twin для зданий/климата)
 
-- **BOPTEST** (Building Optimization Performance Testbed)
-  - Разработан: IBPSA (International Building Performance Simulation Association)
-  - Сайт: https://ibpsa.github.io/project1-boptest/
-  - Это прямой аналог нашей системы для зданий
+-   **BOPTEST** (Building Optimization Performance Testbed)
 
-- **Sinergym**
-  - Python-фреймворк: EnergyPlus + OpenAI Gym интерфейс
-  - GitHub: https://github.com/ugr-sail/sinergym
-  - Используется в академических исследованиях
+    -   Разработан: IBPSA (International Building Performance Simulation Association)
+    -   Сайт: [https://ibpsa.github.io/project1-boptest/](https://ibpsa.github.io/project1-boptest/)
+    -   Наиболее близкая аналогия: независимый испытательный стенд для сравнения внешних управляющих решений
+-   **Sinergym**
 
-- **EnergyPlus**
-  - Разработчик: U.S. Department of Energy (DOE)
-  - Отраслевой стандарт симуляции климата зданий
-  - Сайт: https://energyplus.net/
+    -   Python-фреймворк: EnergyPlus + OpenAI Gym интерфейс
+    -   GitHub: [https://github.com/ugr-sail/sinergym](https://github.com/ugr-sail/sinergym)
+    -   Используется в академических исследованиях
+-   **EnergyPlus**
 
-## Day-Ahead Energy Market (экономический аргумент)
+    -   Разработчик: U.S. Department of Energy (DOE)
+    -   Отраслевой стандарт симуляции климата зданий
+    -   Сайт: [https://energyplus.net/](https://energyplus.net/)
 
-- MISO, PJM, ERCOT — примеры реальных day-ahead рынков в США
-- Участие в day-ahead рынке требует подачи заявок за ~24-48 часов
-- Отклонение от заявки оплачивается по spot-цене (значительно дороже)
+## Экономический аргумент — требуется подтверждение для Biosphere 2
+
+-   Получить фактического поставщика электроэнергии, тарифный план и 12 месяцев счетов Biosphere 2.
+-   Получить 15-минутные или более частые данные электрической нагрузки, если они доступны.
+-   Отдельно оценить:
+    -   peak-demand charges;
+    -   суммарное энергопотребление;
+    -   стоимость аварийных ручных коррекций;
+    -   циклы и износ оборудования;
+    -   стоимость риска для биома и текущих исследований.
+-   SCIP обслуживает район Oracle, но применимость конкретного тарифа к Biosphere 2 необходимо подтвердить по реальному счёту.
+    -   [SCIP — About](https://www.bia.gov/programs-services/power-utilities/scip-power/about-scip)
+    -   [SCIP — Rate Schedule](https://www.bia.gov/programs-services/power-utilities/scip-power/rate-schedule)
+
+### Day-Ahead Energy Market — только после проверки применимости
+
+-   MISO, PJM, ERCOT — примеры реальных day-ahead рынков в США
+-   Участие в day-ahead рынке требует подачи заявок за ~24-48 часов
+-   Отклонение от заявки оплачивается по spot-цене (значительно дороже)
+-   Не использовать в презентации утверждение «в 3–5 раз дороже» без подтверждённых условий энергоснабжения Biosphere 2.
+
+## CAD и геодезическая привязка
+
+-   Зафиксировать источник, владельца и версию CAD-модели.
+-   Зафиксировать систему координат, единицы измерения и локальное начало координат.
+-   Проверить положения четырёх мачт и 18 физических точек.
+-   Отдельно обозначить измеренные значения в точках и визуальную интерполяцию цветового поля между ними.
+
+## Проверка утверждений перед выпуском презентации
+
+-   64 значения в каждом управляющем снимке.
+-   36 климатических каналов в 18 физических точках.
+-   Платформа испытывает, но не создаёт стратегию.
+-   Иллюстративный сценарий не выдаётся за результат работающей модели.
+-   Все численные экономические и эксплуатационные заявления имеют источник.
 
 ---
 
